@@ -1,13 +1,26 @@
-//Обнуление стиля
+//------Обнуление стиля--------------------------------------------
 @import "_nullstyle";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+/*----------------*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+/*----------------*/
+@import "_mix-adaptiv-font";
 
+//-------Инициация переменных--------------------------------------
+$maxWidth: 1280;
+
+/*---Пример использования миксинов-----------------
+---1---Миксин адаптива шрифта (размер по макету, размер по 320px)
+@include adaptive-font(40,24);
+-----------------------------------------------------
+
+
+*/
+
+//------Основной код------------------------------------------------
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 	font-size: 14px;
-	background: #F8F8F8;
-
-
+	background: #f8f8f8;
 }
 
 .page {
@@ -15,7 +28,6 @@ body {
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-
 }
 
 .content {
@@ -28,8 +40,6 @@ body {
 	/* Отступы от "прилипания" при адаптиве */
 	padding: 0px 15px;
 	box-sizing: content-box;
-
-
 }
 
 ._ibg {
@@ -45,9 +55,7 @@ body {
 	}
 }
 
-
 .nav {
-
 	padding: 5px 0;
 
 	/* Делаем нависание хедера */
@@ -91,13 +99,11 @@ body {
 		@media (max-width: 479px) {
 			padding: 0px 20px 0 0;
 		}
-
 	}
 
 	&__navigation {
 		display: flex;
 		flex-wrap: wrap;
-
 	}
 
 	&__item:not(:last-child) {
@@ -119,7 +125,6 @@ body {
 		//Делаем адаптив для телефонов---479px-----
 		@media (max-width: 479px) {
 			font-size: 18px;
-
 		}
 
 		&:hover {
@@ -129,11 +134,11 @@ body {
 }
 
 .first-block {
-
 	min-width: 119px;
 	position: relative;
 
-	&__row {}
+	&__row {
+	}
 
 	&__body {
 		max-width: 400px;
@@ -142,7 +147,7 @@ body {
 		z-index: 2;
 
 		//Выбираем все дочерние элементы кроме последнего
-		>*:not(:last-child) {
+		> *:not(:last-child) {
 			margin: 0px 0px 35px 0px;
 		}
 
@@ -215,7 +220,6 @@ body {
 		/*делаем отступы на кнопках больше
          мобилы 479px*/
 		@media (min-width: 479px) {
-
 			&:not(:last-child) {
 				margin-right: 10px;
 			}
@@ -226,7 +230,6 @@ body {
          479px*/
 		@media (max-width: 479px) {
 			flex: 1 1 auto;
-
 		}
 	}
 
@@ -248,7 +251,6 @@ body {
 		&:hover {
 			background: #0d5c63;
 			color: #ffffff;
-
 		}
 	}
 
@@ -284,12 +286,10 @@ body {
 	margin: -111px 0px 0px 0px;
 	min-width: 101px;
 
-
 	//Адаптив для телефона 479px
 	@media (max-width: 479px) {
 		margin: -150px 0px 0px 0px;
 	}
-
 
 	&__row {
 		display: flex;
@@ -331,7 +331,6 @@ body {
 }
 
 .card {
-
 	&_item {
 		height: 100%;
 		background: #fff;
@@ -340,14 +339,13 @@ body {
 }
 
 .item {
-
 	&__row {
 		padding: 35px 45px;
 		display: flex;
 		flex-direction: column;
 
 		//Выбираем все дочерние элементы кроме последнего
-		>*:not(:last-child) {
+		> *:not(:last-child) {
 			margin: 0px 0px 10px 0px;
 		}
 
@@ -357,7 +355,8 @@ body {
 		}
 	}
 
-	&__image {}
+	&__image {
+	}
 
 	&__title {
 		color: #252b42;
@@ -367,7 +366,6 @@ body {
 		letter-spacing: 0.1px;
 		line-height: calc(32 / 24 * 100%);
 		text-align: left;
-
 	}
 
 	&__text {
@@ -398,7 +396,6 @@ body {
 
 .footer {
 	&__row {
-
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -441,7 +438,6 @@ body {
 }
 
 .third-block {
-
 	background: #fafafa;
 
 	&__title {
@@ -498,12 +494,12 @@ body {
 }
 
 .thrd {
-	&_card {}
+	&_card {
+	}
 }
 
 .thrd_card {
-	background: #FFFFFF;
-
+	background: #ffffff;
 
 	&__row {
 		display: flex;
@@ -513,7 +509,7 @@ body {
 		@media (max-width: 992px) {
 			flex-wrap: wrap;
 
-			>*:not(:nth-child(n+2)) {
+			> *:not(:nth-child(n + 2)) {
 				margin: 0px 0px 20px 0px;
 			}
 		}
@@ -521,17 +517,15 @@ body {
 		@media (max-width: 500px) {
 			flex-wrap: wrap;
 
-			>*:not(:last-child) {
+			> *:not(:last-child) {
 				margin: 0px 0px 10px 0px;
 			}
 
 			margin: 30px 0 0px 0;
 		}
-
 	}
 
 	&__block {
-
 		@media (max-width: 992px) {
 			flex: 0 1 50%;
 		}
@@ -546,7 +540,7 @@ body {
 		flex-direction: column;
 		align-items: center;
 		min-width: 230px;
-		background: #FFFFFF;
+		background: #ffffff;
 
 		@media (max-width: 1020px) {
 			min-width: 200px;
@@ -599,7 +593,8 @@ body {
 		max-width: 470px;
 	}
 
-	&__card {}
+	&__card {
+	}
 }
 
 .fouth {
@@ -632,7 +627,6 @@ body {
 		@media (max-width: 630px) {
 			flex: 0 1 100%;
 		}
-
 	}
 
 	&__item {
@@ -693,10 +687,9 @@ body {
 			align-items: stretch;
 			padding: 25px 0 30px 0;
 		}
-
 	}
 
-	//Важно!!! 
+	//Важно!!!
 	//Правильная адаптивная вставка видео!!!
 
 	&__video {
@@ -728,9 +721,11 @@ body {
 }
 
 .five {
-	&_card {}
+	&_card {
+	}
 
-	&_card_item {}
+	&_card_item {
+	}
 }
 
 .five_card {
@@ -779,7 +774,8 @@ body {
 		}
 	}
 
-	&__image {}
+	&__image {
+	}
 
 	&__text {
 		max-width: 278px;
@@ -823,7 +819,6 @@ body {
 }
 
 .six-block {
-
 	padding: 50px 0;
 
 	@media (max-width: 767px) {
@@ -885,7 +880,6 @@ body {
 		line-height: calc(32 / 24 * 100%);
 		text-align: left;
 
-
 		@media (max-width: 810px) {
 			margin: 0 0 20px 0;
 		}
@@ -902,18 +896,18 @@ body {
 	}
 
 	&__btn {
-		font-family: 'Montserrat';
+		font-family: "Montserrat";
 		font-style: normal;
 		font-weight: 400;
 		font-size: 14px;
 		line-height: calc(28 / 14 * 100%);
 		text-align: center;
 		letter-spacing: 0.2px;
-		color: #FFFFFF;
+		color: #ffffff;
 		align-items: center;
 		justify-content: center;
-		background: #FF7B47;
-		border: 1px solid #E6E6E6;
+		background: #ff7b47;
+		border: 1px solid #e6e6e6;
 		border-radius: 0px 5px 5px 0px;
 		padding: 0px 22px;
 		display: flex;
@@ -921,9 +915,9 @@ body {
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			background: #FFFFFF;
-			color: #FF7B47;
-			border: 1px solid #FF7B47;
+			background: #ffffff;
+			color: #ff7b47;
+			border: 1px solid #ff7b47;
 		}
 
 		@media (max-width: 810px) {
@@ -936,8 +930,8 @@ body {
 		flex: 1 1 auto;
 		min-height: 58px;
 		padding: 0px 20px;
-		background: #F9F9F9;
-		border: 1px solid #E6E6E6;
+		background: #f9f9f9;
+		border: 1px solid #e6e6e6;
 		border-radius: 5px 0 0 5px;
 		color: #737373;
 		border-right: 0;
@@ -969,7 +963,6 @@ body {
 	}
 
 	&__row {
-
 		margin: 20px -15px 35px -15px;
 
 		@media (min-width: 992px) {
@@ -990,7 +983,8 @@ body {
 }
 
 .touch {
-	&_card {}
+	&_card {
+	}
 }
 
 .touch_card {
@@ -1009,7 +1003,8 @@ body {
 		}
 	}
 
-	&__emails {}
+	&__emails {
+	}
 
 	&__email {
 		color: #252b42;
@@ -1039,7 +1034,8 @@ body {
 		margin: 15px 0;
 	}
 
-	&__btn {}
+	&__btn {
+	}
 
 	&__button {
 		display: flex;
@@ -1071,11 +1067,14 @@ body {
 .touch_card_middle {
 	background: #252b42;
 
-	&__row {}
+	&__row {
+	}
 
-	&__image {}
+	&__image {
+	}
 
-	&__emails {}
+	&__emails {
+	}
 
 	&__email {
 		color: #ffffff;
@@ -1085,7 +1084,8 @@ body {
 		color: #ffffff;
 	}
 
-	&__btn {}
+	&__btn {
+	}
 
 	&__button {
 		color: #ffffff;
@@ -1095,14 +1095,12 @@ body {
 			background-color: #ff7b47;
 			color: #ffffff;
 			border: 1px solid #ff7b47;
-
 		}
 	}
 }
 
 .contact-us {
 	&__row {
-
 		margin: 20px 0;
 
 		@media (min-width: 767px) {
@@ -1114,13 +1112,11 @@ body {
 	}
 
 	&__text {
-
 		padding: 0 0 20px 0;
 
 		@media (min-width: 767px) {
 			padding: 0 20px 0 0;
 		}
-
 	}
 
 	&__title {
@@ -1150,7 +1146,6 @@ body {
 		@media (min-width: 767px) {
 			margin: 0 38px 0 0;
 		}
-
 	}
 
 	&__btn {
@@ -1176,16 +1171,15 @@ body {
 			color: #ff7b47;
 			border: 1px solid #ff7b47;
 		}
-
 	}
 }
 
 .menu {
-
 	background: #17213c;
 	padding: 30px 0px;
 
-	&__container {}
+	&__container {
+	}
 
 	&__column {
 		flex: 0 1 16.6667%;
@@ -1206,7 +1200,6 @@ body {
 		:last-child {
 			flex: 0 1 33.334%;
 		}
-
 	}
 
 	&__row {
@@ -1228,13 +1221,16 @@ body {
 		margin: 0 0 20px 0;
 	}
 
-	&__footer {}
+	&__footer {
+	}
 
-	&__contacts {}
+	&__contacts {
+	}
 }
 
 .footer-menu {
-	&__list {}
+	&__list {
+	}
 
 	&__item {
 		&:not(:last-child) {
@@ -1256,17 +1252,14 @@ body {
 		&:hover {
 			text-decoration: underline;
 		}
-
 	}
 }
 
 .contacts-footer {
-
 	display: flex;
 	flex-direction: column;
 
 	&__item {
-
 		padding: 0 0 0 34px;
 		display: flex;
 		align-items: center;
