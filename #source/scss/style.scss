@@ -1,12 +1,14 @@
 //------Обнуление стиля--------------------------------------------
 @import "_nullstyle";
-/*----------------*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+/*------Подключение шрифтов----------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import "fonts.scss"; 
+
 /*----------------*/
 @import "_mix-adaptiv-font";
 
 //-------Инициация переменных--------------------------------------
-$maxWidth: 1280;
+$maxWidth: 1600;
 
 /*---Пример использования миксинов-----------------
 ---1---Миксин адаптива шрифта (размер по макету, размер по 320px)
@@ -18,9 +20,9 @@ $maxWidth: 1280;
 
 //------Основной код------------------------------------------------
 body {
-	font-family: "Montserrat", sans-serif;
+	font-family: "MyriadProRegular", "Montserrat", sans-serif;
 	font-size: 14px;
-	background: #f8f8f8;
+	background-color: #f7f7f7;
 }
 
 .page {
@@ -69,11 +71,6 @@ body {
 		display: flex;
 		min-height: 104px;
 		align-items: center;
-
-		//Делаем адаптив для телефонов---479px-----
-		@media (max-width: 479px) {
-			min-height: 70px;
-		}
 	}
 
 	&__logo {
